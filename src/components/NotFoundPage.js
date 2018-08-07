@@ -12,7 +12,7 @@ function NotFoundPage(props) {
 
 	return (
 		<ErrorPage subheading="Page does not exist">
-			This is not the page you are looking for!
+			<img src="images/not_found.png"/>
 		</ErrorPage>
 	);
 }

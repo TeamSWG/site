@@ -16,8 +16,8 @@ const styles = {
 function MediaCard(props) {
   const { classes } = props;
   return (
-    <div>
-      <Card>
+    <div style={{height: "100%"}}>
+      <Card style={{height: "100%"}}>
         <CardMedia
           className={classes.media}
           image={props.imageUrl}
@@ -27,7 +27,7 @@ function MediaCard(props) {
             {props.headline}
           </Typography>
           <Typography component="p">
-            {props.content}
+            {props.children}
           </Typography>
         </CardContent>
       </Card>
