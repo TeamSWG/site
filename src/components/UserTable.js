@@ -184,7 +184,7 @@ class UserTable extends React.Component {
 						{this.state.enableEditing ?
 							<Switch checked={currentUser.banned} onChange={() => this.handleBanChange(currentUser)} disabled={this.props.userId == currentUser._id}/>
 							:
-							'' + currentUser.banned
+							currentUser.banned ? 'Yes' : 'No'
 						}
 					</TableCell>
 
