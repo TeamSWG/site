@@ -8,11 +8,9 @@ const styles = {
 };
 
 function NotFoundPage(props) {
-	const {classes} = props;
-
 	return (
 		<ErrorPage subheading="Page does not exist">
-			<img src="images/not_found.png"/>
+			<img alt="Page Not Found" src="/images/not_found.png"/>
 		</ErrorPage>
 	);
 }

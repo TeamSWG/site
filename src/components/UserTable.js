@@ -12,6 +12,7 @@ import DeleteIcon from '@material-ui/icons/Delete'
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Switch from '@material-ui/core/Switch';
+import Username from './Username';
 
 const styles = theme => ({
 	rightIcon: {
@@ -77,6 +78,10 @@ class UserTable extends React.Component {
 		this.setState({ anchorEl: null });
 		const editedUserId = user._id;
 
+		if (!editedUserId) {
+			return;
+		}
+
 		axios.post('http://localhost:3000/secure/user/accessLevel/' + editedUserId, {
 			token: this.props.token,
 			accessLevel
@@ -89,22 +94,12 @@ class UserTable extends React.Component {
 
 			usersCopy.splice(index, 1, editedUser);
 
-			console.log("USERS BEFORE");
-			console.log(this.state.users);
-			console.log("USERS NOW");
-			console.log(usersCopy);
-
 			this.setState({
 				users: usersCopy
 			});
 		}).catch(error => {
 			console.log(error);
 		})
-
-		// TODO update with API
-		// TODO get user from array
-		// TODO update accessLevel on user
-		// TODO replace previous user with new user in array. Same index!
 	};
 
 	handleBanChange = user => {
@@ -150,7 +145,7 @@ class UserTable extends React.Component {
 			return (
 				<TableRow>
 					<TableCell>
-						{currentUser.username}
+						<Username user={currentUser}/>
 					</TableCell>
 					<TableCell>
 						{this.state.enableEditing ?
@@ -182,7 +177,7 @@ class UserTable extends React.Component {
 					
 					<TableCell>
 						{this.state.enableEditing ?
-							<Switch checked={currentUser.banned} onChange={() => this.handleBanChange(currentUser)} disabled={this.props.userId == currentUser._id}/>
+							<Switch checked={currentUser.banned} onChange={() => this.handleBanChange(currentUser)} disabled={this.props.userId === currentUser._id}/>
 							:
 							currentUser.banned ? 'Yes' : 'No'
 						}
@@ -202,8 +197,6 @@ class UserTable extends React.Component {
 	}
 
 	render() {
-		const { classes } = this.props;
-
 		switch (this.state.status) {
 			default:	// If status is an unhandled case, we show the ready variant by default
 			case 'ready':

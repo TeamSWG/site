@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
-import { connect } from 'react-redux';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -56,6 +55,7 @@ class LoginForm extends React.Component {
 					this.setState({
 						status: 'banned'
 					});
+					break;
 				default:
 					// TODO general error
 					break;

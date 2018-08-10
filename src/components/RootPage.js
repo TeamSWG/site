@@ -9,14 +9,14 @@ import HomePage from "./HomePage";
 import NavBar from "./NavBar";
 import NotFoundPage from "./NotFoundPage";
 import ShowUsersPage from "./ShowUsersPage";
+import UserProfilePage from './UserProfilePage';
+import LoginPage from './LoginPage';
 
 const styles = {
 
 };
 
 function RootPage(props) {
-	const { classes } = props;
-
 	return (
 		<div>
 			<BrowserRouter>
@@ -25,7 +25,9 @@ function RootPage(props) {
 						<Route exact path="/" component={HomePage} />
 						<Route exact path="/install" component={InstallPage} />
 						<Route exact path="/createUser" component={CreateUserPage} />
+						<Route exact path="/login" component={LoginPage} />
 						<Route exact path="/users" component={ShowUsersPage} />
+						<Route exact path="/user/:userId" component={UserProfilePage} />
 						<Route component={NotFoundPage} />
 					</Switch>
 				</NavBar>

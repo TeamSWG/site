@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,12 +8,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
 import HomeIcon from '@material-ui/icons/Home';
 import CloudDownloadIcon from '@material-ui/icons/CloudDownload';
 import PeopleIcon from '@material-ui/icons/People';
-import IconButton from '@material-ui/core/IconButton';
-import Button from '@material-ui/core/Button';
 
 import { Link } from "react-router-dom";
 import UserButtonContainer from '../containers/UserButtonContainer';
@@ -52,10 +48,6 @@ const styles = theme => ({
 });
 
 class NavBar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     const { classes } = this.props;
 

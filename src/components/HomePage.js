@@ -13,8 +13,6 @@ const styles = {
 };
 
 function HomePage(props) {
-	const { classes } = props;
-
 	return (
 		<div>
 			<Grid container spacing={16}>

@@ -71,7 +71,7 @@ class InstallPage extends React.Component {
 							</StepLabel>
 							<StepContent>
 								<Typography component='p'>
-								The launcher needs a JRE in order to run. You can download one <a target='_blank' href='http://www.oracle.com/technetwork/java/javase/downloads/index.html'>here</a>.
+								The launcher needs a JRE in order to run. You can download one <a target='_blank' href='http://www.oracle.com/technetwork/java/javase/downloads/index.html' rel='noopener noreferrer'>here</a>.
 								If you plan on developing, you might want to get a JDK instead of just the JRE.
 								</Typography>
 								<Button
@@ -91,7 +91,7 @@ class InstallPage extends React.Component {
 							</StepLabel>
 							<StepContent>
 								<Typography component='p'>
-									Download the launcher <a target='_blank' href='http://login1.projectswg.com/launcher/Launcher.jar'>here</a>.
+									Download the launcher <a target='_blank' href='http://login1.projectswg.com/launcher/Launcher.jar' rel='noopener noreferrer'>here</a>.
 								</Typography>
 								<Button
 									onClick={this.handleBack}

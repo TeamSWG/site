@@ -11,7 +11,7 @@ import reducer from './reducers/index'
 function App() {
 	const store = createStore(reducer);
 
-	const unsubscribe = store.subscribe(() =>
+	store.subscribe(() =>
 		console.log(store.getState())
 	)
 

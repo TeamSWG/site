@@ -41,7 +41,7 @@ class UserButton extends React.Component {
 		axios.get('http://localhost:3000/user/' + userId)
 			.then(response => {
 				this.setState({
-					username: response.data.username
+					user: response.data
 				})
 			})
 			.catch(error => {
@@ -63,16 +63,20 @@ class UserButton extends React.Component {
 		cookies.remove('userData');
 
 		this.setState({
-			username: undefined
+			user: undefined
 		});
 
 		this.props.onLogin(undefined, undefined);
 	};
 
+	profileHref = () => {
+		return '/user/' + this.state.user._id;
+	};
+
 	render() {
 		return (
 			<div>
-				{this.state.username ?
+				{this.state.user ?
 					<div>
 						<Button
 							aria-owns={this.state.anchorEl ? 'simple-menu' : null}
@@ -80,7 +84,7 @@ class UserButton extends React.Component {
 							onClick={this.handleClick}
 							color='inherit'
 						>
-							{this.state.username}
+							{this.state.user.username}
        			 </Button>
 						<Menu
 							id="simple-menu"
@@ -88,8 +92,7 @@ class UserButton extends React.Component {
 							open={Boolean(this.state.anchorEl)}
 							onClose={this.handleClose}
 						>
-							<MenuItem onClick={this.handleClose}>Profile</MenuItem>
-							<MenuItem onClick={this.handleClose}>My account</MenuItem>
+							<MenuItem onClick={this.handleClose} component={Link} to={this.profileHref()}>Profile</MenuItem>
 							<MenuItem onClick={this.logout}>Logout</MenuItem>
 						</Menu>
 					</div>
@@ -98,7 +101,7 @@ class UserButton extends React.Component {
 						<Button color="inherit" component={Link} to="/createUser">
 							Sign Up
 						</Button>
-						<Button color="inherit" component={Link} to="/createUser">
+						<Button color="inherit" component={Link} to="/login">
 							Log in
 						</Button>
 					</div>
