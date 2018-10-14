@@ -65,7 +65,7 @@ class UserTable extends React.Component {
 	}
 
 	fetchUsers() {
-		axios.get('http://localhost:3000/users')
+		axios.get('http://game.teamswg.com:3000/users')
 			.then(this.handleSuccess.bind(this))
 			.catch(this.handleError.bind(this));
 	}

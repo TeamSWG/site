@@ -38,7 +38,7 @@ class UserButton extends React.Component {
 	}
 
 	fetchUserData(userId) {
-		axios.get('http://localhost:3000/user/' + userId)
+		axios.get('http://game.teamswg.com:3000/user/' + userId)
 			.then(response => {
 				this.setState({
 					user: response.data

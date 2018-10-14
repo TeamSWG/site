@@ -68,7 +68,7 @@ class LoginForm extends React.Component {
 	}
 
 	login() {
-		axios.post('http://localhost:3000/user/login', {
+		axios.post('http://game.teamswg.com:3000/user/login', {
 			username: this.state.username,
 			password: this.state.password
 		})

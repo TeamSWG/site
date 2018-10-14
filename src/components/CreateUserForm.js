@@ -58,7 +58,7 @@ class CreateUserForm extends React.Component {
 	}
 
 	createUser() {
-		axios.post('http://localhost:3000/user/create', {
+		axios.post('http://game.teamswg.com:3000/user/create', {
 			username: this.state.username,
 			password: this.state.password	// TODO hash
 		})

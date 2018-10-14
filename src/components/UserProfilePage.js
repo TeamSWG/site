@@ -29,7 +29,7 @@ class UserProfilePage extends React.Component {
 	}
 
 	fetchUserData() {
-		axios.get('http://localhost:3000/user/' + this.props.match.params.userId)
+		axios.get('http://game.teamswg.com:3000/user/' + this.props.match.params.userId)
 			.then(response => {
 				this.setState({
 					user: response.data
