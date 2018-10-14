@@ -1,7 +1,8 @@
 FROM node:10.12.0-slim
 
 # 1. Transfer source files to the image
-ADD app.js /app.js
+ADD src /src
+ADD public /public
 ADD package.json /package.json
 
 # 2. Install dependencies defined in package.json
