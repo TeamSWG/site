@@ -11,6 +11,7 @@ import NotFoundPage from "./NotFoundPage";
 import ShowUsersPage from "./ShowUsersPage";
 import UserProfilePage from './UserProfilePage';
 import LoginPage from './LoginPage';
+import HeaderImage from './HeaderImage';
 
 const styles = {
 
@@ -20,6 +21,8 @@ function RootPage(props) {
 	return (
 		<div>
 			<BrowserRouter>
+			<div>
+				<HeaderImage/>
 				<NavBar title="TeamSWG">
 					<Switch>
 						<Route exact path="/" component={HomePage} />
@@ -31,6 +34,7 @@ function RootPage(props) {
 						<Route component={NotFoundPage} />
 					</Switch>
 				</NavBar>
+			</div>
 			</BrowserRouter>
 		</div>
 	);

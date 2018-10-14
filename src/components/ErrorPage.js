@@ -1,14 +1,22 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-const styles = {
-
-};
+const styles = theme => ({
+	root: {
+		...theme.mixins.gutters(),
+		paddingTop: theme.spacing.unit * 2,
+		paddingBottom: theme.spacing.unit * 2,
+		margin: "0 auto",
+	}
+});
 
 function ErrorPage(props) {
+	const { classes } = props;
+
 	return (
-		<div>
+		<Paper className={classes.root}>
 			<Typography component="h1" variant="headline">
 				An error has occured
 			</Typography>
@@ -18,7 +26,7 @@ function ErrorPage(props) {
 			<Typography component="p">
 				{props.children}
 			</Typography>
-		</div>
+		</Paper>
 	);
 }
 
