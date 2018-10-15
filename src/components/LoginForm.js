@@ -5,6 +5,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
 	button: {
@@ -101,21 +102,21 @@ class LoginForm extends React.Component {
 				);
 			case 'success':
 				return (
-					<div>
-						You logged in! Wow :D
-					</div>
+					<Typography component="p">
+						Succesful login.
+					</Typography>
 				);
 			case 'unreachable':
 				return (
-					<div>
+					<Typography component="p">
 						Users API unreachable. Try again later.
-					</div>
+					</Typography>
 				);
 			case 'banned':
 				return (
-					<div>
+					<Typography component="p">
 						This user is banned.
-					</div>
+					</Typography>
 				);
 		}
 	}

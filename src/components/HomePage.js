@@ -1,6 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
+import { Link } from 'react-router-dom';
 
 import CreateUserForm from './CreateUserForm';
 import Discord from './Discord';
@@ -16,28 +18,26 @@ function HomePage(props) {
 	return (
 		<div>
 			<Grid container spacing={16}>
-				<Grid item sm={6}>
-					<MediaCard imageUrl="http://digitalspyuk.cdnds.net/16/39/480x240/landscape-1475228749-lego-movie-awesome-gif.gif" headline="Alpha Release">
-						<p>interesting content about the release :-)</p>
+				<Grid item sm={4}>
+					<MediaCard imageUrl="images/welcome.jpg" headline="Welcome">
+						<Typography component="p">The project is in the early stages of development.</Typography>
 					</MediaCard>
 				</Grid>
 
-				<Grid item sm={6}>
+				<Grid item sm={6} md={4}>
+					<MediaCard imageUrl="images/signup.jpg" headline="Sign Up Today">
+						<Typography component="p">
+							Click <Link to="/createUser">here</Link> to sign up!
+						</Typography>
+					</MediaCard>
+				</Grid>
+
+				<Grid item sm={4}>
 					<Discord />
 				</Grid>
 
-				<Grid item sm={6} md={4}>
-					<MediaCard imageUrl="images/screenShot0034.jpg" headline="Login">
-						<LoginFormContainer />
-					</MediaCard>
-				</Grid>
-				<Grid item sm={6} md={4}>
-					<MediaCard imageUrl="images/reptile.jpg" headline="Sign Up Today!">
-						<CreateUserForm />
-					</MediaCard>
-				</Grid>
-				<Grid item sm={6} md={4}>
-					<MediaCard imageUrl="images/reptile.jpg" headline="Users">
+				<Grid item sm={6} md={6}>
+					<MediaCard imageUrl="images/users.jpg" headline="Users">
 						<UserTableContainer/>
 					</MediaCard>
 				</Grid>

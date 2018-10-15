@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
 	button: {
@@ -94,15 +95,15 @@ class CreateUserForm extends React.Component {
 				);
 			case 'success':
 				return (
-					<div>
+					<Typography component="p">
 						User has successfully been created.
-					</div>
+					</Typography>
 				);
 			case 'unreachable':
 				return (
-					<div>
+					<Typography component="p">
 						Users API unreachable. Try again later.
-					</div>
+					</Typography>
 				);
 		}
 	}

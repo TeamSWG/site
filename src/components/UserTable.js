@@ -82,7 +82,7 @@ class UserTable extends React.Component {
 			return;
 		}
 
-		axios.post('http://localhost:3000/secure/user/accessLevel/' + editedUserId, {
+		axios.post('http://game.teamswg.com:3000/secure/user/accessLevel/' + editedUserId, {
 			token: this.props.token,
 			accessLevel
 		}).then(response => {
@@ -106,7 +106,7 @@ class UserTable extends React.Component {
 		const editedUserId = user._id;
 		const reverse = !user.banned
 
-		axios.post('http://localhost:3000/secure/user/ban/' + editedUserId, {
+		axios.post('http://game.teamswg.com:3000/secure/user/ban/' + editedUserId, {
 			token: this.props.token,
 			banned: reverse
 		}).then(response => {
@@ -127,7 +127,7 @@ class UserTable extends React.Component {
 	};
 
 	deleteUser(userId) {
-		axios.post('http://localhost:3000/secure/user/delete/' + userId, {
+		axios.post('http://game.teamswg.com:3000/secure/user/delete/' + userId, {
 			token: this.props.token
 		}).then(response => {
 			this.setState({
