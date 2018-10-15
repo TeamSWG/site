@@ -11,7 +11,7 @@ const styles = {
 function LoginPage(props) {
 	return (
 		<div>
-			<MediaCard imageUrl="images/screenShot0034.jpg" headline="Login">
+			<MediaCard imageUrl="images/login.jpg" headline="Login">
 				<LoginFormContainer />
 			</MediaCard>
 		</div>

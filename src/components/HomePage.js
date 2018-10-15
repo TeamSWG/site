@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import CreateUserForm from './CreateUserForm';
 import Discord from './Discord';
 import MediaCard from './MediaCard';
+import Milestone from './Milestone';
 import LoginFormContainer from '../containers/LoginFormContainer';
 import UserTableContainer from '../containers/UserTableContainer';
 
@@ -36,11 +37,12 @@ function HomePage(props) {
 					<Discord />
 				</Grid>
 
-				<Grid item sm={6} md={6}>
-					<MediaCard imageUrl="images/users.jpg" headline="Users">
-						<UserTableContainer/>
-					</MediaCard>
+				<Grid item sm={6} md={4}>
+					<MediaCard imageUrl="images/milestone.jpg" headline="Current Milestone">
+                    	<Milestone/>
+                    </MediaCard>
 				</Grid>
+
 			</Grid>
 		</div>
 	);
